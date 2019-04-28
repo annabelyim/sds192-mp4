@@ -13,12 +13,18 @@ db <- dbConnect(MySQL(),
                 host = "scidb.smith.edu", 
                 user = "mth292", 
                 password = "RememberPi", 
-                dbname = "imdb")
+                dbname = "nyctaxi")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 
 ```
 
 ```{sql connection=db}
-SHOW TABLES;
+select tip_amount, fare_amount, tip_amount*100/fare_amount as tip_percent
+from yellow
+where fare_amount is not null and tip_amount is not null
 ```
-percentage of tip for passengers, the average percentage.
+```{sql connection=db}
+select tip_amount, fare_amount, sum(tip_amount*100/fare_amount)/ count(fare_amount) as mean_tip_percentage
+from yellow
+where fare_amount is not null and tip_amount is not null
+```
