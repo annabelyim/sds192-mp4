@@ -13,18 +13,16 @@ db <- dbConnect(MySQL(),
                 host = "scidb.smith.edu", 
                 user = "mth292", 
                 password = "RememberPi", 
-                dbname = "nyctaxi")
+                dbname = "airlines")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 
 ```
 
 ```{sql connection=db}
-select tip_amount, fare_amount, tip_amount*100/fare_amount as tip_percent
-from yellow
-where fare_amount is not null and tip_amount is not null
-```
-```{sql connection=db}
-select tip_amount, fare_amount, sum(tip_amount*100/fare_amount)/ count(fare_amount) as mean_tip_percentage
-from yellow
-where fare_amount is not null and tip_amount is not null
+SELECT ac.carrier, ac.name, af.dep_delay, af.year
+FROM airlines.carriers ac
+JOIN airlines.flights af
+on ac.carrier = af.carrier 
+HAVING af.year >= 2000
+LIMIT 20;
 ```
