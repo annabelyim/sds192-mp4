@@ -20,8 +20,8 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 
 ```{sql connection=db}
 SELECT ac.carrier, ac.name, af.dep_delay, af.year
-FROM airlines.carriers ac
-JOIN airlines.flights af
+FROM carriers ac
+JOIN flights af
 on ac.carrier = af.carrier 
 HAVING af.year >= 2000
 LIMIT 20;
