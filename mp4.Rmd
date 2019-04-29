@@ -22,7 +22,9 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 SELECT ac.carrier, ac.name, af.dep_delay, af.year
 FROM carriers ac
 JOIN flights af
-on ac.carrier = af.carrier 
+on ac.carrier = af.carrier
+WHERE ac.carrier in ("AS", "DL", "F9", "AA", "NK", "B6","HA")
+GROUP BY ac.carrier
 HAVING af.year >= 2000
 LIMIT 20;
 ```
