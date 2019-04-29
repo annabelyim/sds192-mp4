@@ -19,12 +19,11 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
 
 ```{sql connection=db}
-SELECT ac.carrier, ac.name, af.dep_delay, af.year
+SELECT ac.carrier, ac.name, af.year, avg(af.dep_delay) as average_delay_min, af.day, af.month
 FROM carriers ac
 JOIN flights af
 on ac.carrier = af.carrier
-WHERE ac.carrier in ("AS", "DL", "F9", "AA", "NK", "B6","HA")
+WHERE af.year >= 2016 and ac.carrier in ("AS", "DL", "F9", "AA" "NK", "B6","HA") and af.month=12 and af.day=25
 GROUP BY ac.carrier
-HAVING af.year >= 2000
-LIMIT 20;
+
 ```
