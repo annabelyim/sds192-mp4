@@ -18,7 +18,6 @@ db <- dbConnect(MySQL(),
 knitr::opts_chunk$set(connection = db, max.print = 20)
 
 ```
-<center>![christmas](christmas1.png)</center>
 Christmas is arguably the most important holiday, families and friends get together to celebrate the holidays. It's the time people apperciated spending time at home with relatives and frinds which often involves traveling home. But flying home can create a lot of stress especially because of the weather and possible delays. In fact, data shows that in 2015 chirstams eve was 6th day in december with the most delays with a total of 200 days of delays.(more comment about the data)
 
 ```{sql connection=db}
@@ -29,7 +28,7 @@ GROUP BY af.day
 order by total_delay_days desc
 limit 0, 20
 ```
-<center>![delay](delay.png)</center>
+
 (comment on best ways to travel and avoid delays). Sprit airlines is the worst include funny video of it.
 ```{sql connection=db}
 SELECT ac.carrier, ac.name, af.year, avg(af.dep_delay) as average_delay_min, af.day, af.month
