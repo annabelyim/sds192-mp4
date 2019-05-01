@@ -27,3 +27,4 @@ WHERE ac.carrier IN ('AA', 'SA', 'DAL', 'UA','FA', 'AA', 'SA', 'JB', 'HA')
 GROUP BY ac.carrier
 HAVING af.year = 2016 AND af.month = 12 AND af.day = 25; 
 ```
+
