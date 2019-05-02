@@ -55,6 +55,10 @@ Forbes in 2018 published an article on the ranking of airlines in the United Sta
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YvfYK0EEhK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+While Alaska Airlines is scored in the top among other airlines, the relative prices tend to be more expensive. While it may be stressful to have a bad experience coming home during the holidays, using low rated airlines such as the Spirit Airlines may not be so bad at the end as you are seeing family. Having delays may not be so bad. It might even save you from missing your flight if you arrived late for some reason. So it is really important to plan ahead according to what carrier you’re flying with. It’s true that it’s hard to predict flight delays, but if you’re flying with Alaska Airlines, chances are that the flight will be on time. It is really up to your preferences, but the delays should not take away from the fact that after a long day at the airport you will have the opportunity to spend time with family on these important holidays. Don’t be too stressed about your flight experience, and I hope you make a good decision based on our suggestions of carriers that have the least delays.
+
+
 ```{r, message = FALSE, warning = FALSE, echo = TRUE}
 wordcountaddin:::text_stats()
 ```
