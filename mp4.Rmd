@@ -6,7 +6,7 @@ output:
   html_document:
     code_folding: hide
 ---
-
+## I Just Want to Be Home, but of Course, My Flight Is Delayed
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(RMySQL)
@@ -26,8 +26,8 @@ SELECT  af.month, af.day, AVG(af.dep_delay) as ave_delay_minutes
 FROM flights af
 WHERE af.year =2015 and month=12
 GROUP BY af.day
-order by ave_delay_minutes desc
-limit 0, 20
+ORDER BY ave_delay_minutes desc
+LIMIT 0, 20
 ```
 (comment on best ways to travel and avoid delays). Sprit airlines is the worst include funny video of it.
 ```{sql connection=db}
@@ -37,8 +37,8 @@ JOIN flights af
 on ac.carrier = af.carrier
 WHERE af.year= 2015 and af.month=12 and af.day =24
 GROUP BY ac.carrier
-order by average_delay_min
-limit 0,10
+ORDER BY average_delay_min
+LIMIT 0,10
 ```
 
 
@@ -50,3 +50,9 @@ wordcountaddin:::text_stats()
 
 
 ^[[Link to the GitHub Repository]https://github.com/annabelyim/sds192-mp4.git
+
+###References:
+
+^[[Link to USA today Article]https://traveltips.usatoday.com/busiest-travel-day-108182.html
+
+^[[Link to Forbes Article]https://www.forbes.com/sites/laurabegleybloom/2018/03/06/ranked-the-best-and-worst-airlines-in-america/#1ff18bf7e953
