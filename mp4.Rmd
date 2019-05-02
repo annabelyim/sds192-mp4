@@ -21,11 +21,11 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 
 Christmas is arguably the most important holiday, families and friends get together to celebrate the holidays. It's the time people apperciated spending time at home with relatives and frinds which often involves traveling home. But flying home can create a lot of stress especially because of the weather and possible delays. In fact, data shows that in 2015 chirstams eve was 6th day in december with the most delays with a total of 200 days of delays.(more comment about the data)
 ```{sql connection=db}
-SELECT  sum(af.dep_delay)/(60*24) as total_delay_days, af.day, af.month
+SELECT  af.month, af.day, AVG(af.dep_delay) as ave_delay_minutes
 FROM flights af
 WHERE af.year =2015 and month=12
 GROUP BY af.day
-order by total_delay_days desc
+order by ave_delay_minutes desc
 limit 0, 20
 ```
 (comment on best ways to travel and avoid delays). Sprit airlines is the worst include funny video of it.
@@ -39,4 +39,13 @@ GROUP BY ac.carrier
 order by average_delay_min
 limit 0,10
 ```
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YvfYK0EEhK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+```{r, message = FALSE, warning = FALSE, echo = TRUE}
+wordcountaddin:::text_stats()
+```
+
+
+^[[Link to the GitHub Repository]https://github.com/annabelyim/sds192-mp4.git
