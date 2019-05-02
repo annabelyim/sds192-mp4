@@ -1,12 +1,12 @@
 ---
-title: "mp4"
+title: "Mini-Project #4"
 author: "Kiara Correa Acosta, Annabel Yim, Syrine Matoussi"
 date: "April 24, 2019"
 output:
   html_document:
     code_folding: hide
 ---
-
+## I Just Want to Be Home, but of Course, My Flight Is Delayed
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(RMySQL)
@@ -20,15 +20,25 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
 
 Christmas is arguably the most important holiday, families and friends get together to celebrate the holidays. It's the time people apperciated spending time at home with relatives and frinds which often involves traveling home. But flying home can create a lot of stress especially because of the weather and possible delays. In fact, data shows that in 2015 chirstams eve was 6th day in december with the most delays with a total of 200 days of delays.(more comment about the data)
+
+Christmas is arguably the most important holiday, as family and friends get together to celebrate the holidays. It's the time people appreciate spending time at home with relatives and friends which often involves traveling home. USA today listed the Christmas season as one of the busiest travel days. But flying home can create a lot of stress especially because of the weather and possible delays. 
+
+Problem statement: For this assignment, we are trying to figure out which airline carriers have the least amount of delays during Christmas Eve using the airline's database. 
+
+In order to confirm whether Christmas Eve is actually one of the busiest days with a lot of delays, we used the flight's data frame to compute the average delay minutes in each day in the month of December 2015. We grouped the data frame by the days in December and computed the average delay times for each day using the AVG() function. In fact, data shows that Christmas Eve had 6th most delays in December 2015 with an average of 21.5332 minutes. 
+
+
 ```{sql connection=db}
 SELECT  af.month, af.day, AVG(af.dep_delay) as ave_delay_minutes
 FROM flights af
 WHERE af.year =2015 and month=12
 GROUP BY af.day
-order by ave_delay_minutes desc
-limit 0, 20
+ORDER BY ave_delay_minutes desc
+LIMIT 0, 20
 ```
-(comment on best ways to travel and avoid delays). Sprit airlines is the worst include funny video of it.
+
+In order to find out which airline carriers have the least delay times on Christmas Eve, we grouped by the airline carrier, and then took the average of the delay times using the AVG() function. And by using ORDER BY and LIMIT we found the top ten airline carriers that had the least average delay minutes. The top ten airline carriers to prevent from facing flight delay during Christmas Eve are Alaska Airlines, Envoy Air, Hawaiian Airlines, United Airlines, and others as shown in the data table below. 
+
 ```{sql connection=db}
 SELECT ac.carrier, ac.name, af.year, avg(af.dep_delay) as average_delay_min, af.day, af.month
 FROM carriers ac
@@ -36,10 +46,12 @@ JOIN flights af
 on ac.carrier = af.carrier
 WHERE af.year= 2015 and af.month=12 and af.day =24
 GROUP BY ac.carrier
-order by average_delay_min
-limit 0,10
+ORDER BY average_delay_min
+LIMIT 0,10
 ```
 
+
+In the article from the USA today: “What Is the Busiest Travel Day?” has stated that New Year’s and Christmas is the busiest time of the year to travel by airplane. Although this time period is the busiest our data has shown us that the day with the most delays is December 29th with an average of 30.9502 mins of delays. Assuming that airlines tend to get the most delays when a large number of people are traveling we would have expected Christmas and New Years to be the busiest. The real question to ask is who is traveling on these days? Everyone would rather have the chance to already be with their families on these special days and not on an airplane.  According to our data, these holidays are at the bottom of our top 20 data table. Both days average around 8 mins in delays. December 29th is a middle point of the week between these two holidays which makes sense why it can be seen as the busiest of days.  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YvfYK0EEhK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -49,3 +61,9 @@ wordcountaddin:::text_stats()
 
 
 ^[[Link to the GitHub Repository]https://github.com/annabelyim/sds192-mp4.git
+
+###References:
+
+^[[Link to USA today Article]https://traveltips.usatoday.com/busiest-travel-day-108182.html
+
+^[[Link to Forbes Article]https://www.forbes.com/sites/laurabegleybloom/2018/03/06/ranked-the-best-and-worst-airlines-in-america/#1ff18bf7e953
