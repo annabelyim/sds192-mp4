@@ -34,6 +34,8 @@ ORDER BY ave_delay_minutes desc
 LIMIT 0, 20
 ```
 
+In the article from the USA today: “What Is the Busiest Travel Day?” has stated that New Year’s and Christmas is the busiest time of the year to travel by airplane. Although this time period is the busiest our data has shown us that the day with the most delays is December 29th with an average of 30.9502 mins of delays. Assuming that airlines tend to get the most delays when a large number of people are traveling we would have expected Christmas and New Years to be the busiest. The real question to ask is who is traveling on these days? Everyone would rather have the chance to already be with their families on these special days and not on an airplane.  According to our data, these holidays are at the bottom of our top 20 data table. Both days average around 8 mins in delays. December 29th is a middle point of the week between these two holidays which makes sense why it can be seen as the busiest of days.  
+
 In order to find out which airline carriers have the least delay times on Christmas Eve, we grouped by the airline carrier, and then took the average of the delay times using the AVG() function. And by using ORDER BY and LIMIT we found the top ten airline carriers that had the least average delay minutes. The top ten airline carriers to prevent from facing flight delay during Christmas Eve are Alaska Airlines, Envoy Air, Hawaiian Airlines, United Airlines, and others as shown in the data table below. 
 
 ```{sql connection=db}
@@ -48,7 +50,7 @@ LIMIT 0,10
 ```
 
 
-In the article from the USA today: “What Is the Busiest Travel Day?” has stated that New Year’s and Christmas is the busiest time of the year to travel by airplane. Although this time period is the busiest our data has shown us that the day with the most delays is December 29th with an average of 30.9502 mins of delays. Assuming that airlines tend to get the most delays when a large number of people are traveling we would have expected Christmas and New Years to be the busiest. The real question to ask is who is traveling on these days? Everyone would rather have the chance to already be with their families on these special days and not on an airplane.  According to our data, these holidays are at the bottom of our top 20 data table. Both days average around 8 mins in delays. December 29th is a middle point of the week between these two holidays which makes sense why it can be seen as the busiest of days.  
+Forbes in 2018 published an article on the ranking of airlines in the United States. They pointed out how The Points Guy, a brand that specializes in air travel ranked Alaska Airlines as the best airline in the United States. And also from our data, we found out that Alaska Airlines had the least amount of average delays. So why is Alaska Airlines so good? Many reasons. Alaska Airlines does not excel in one area but rather it has the airline scored in the top three across half of our criteria — airfare, on-time arrivals, baggage handling, customer satisfaction, and its best-in-the-industry frequent flyer program. In contrast, Spirit Airlines ranked last out of the 10 carriers in the delay table. In an article by MONEY, Prachi Bhardwaj explains the reason for flight delays are usually within the airline’s control: maintenance problems, aircraft cleaning, fueling. Spirit Airlines also ranked last also for customer satisfaction, cabin comfort and frequent flyer program. Although this is expected considering the low Spirit Airline Airfares, customers still express their frustration with the carrier. Comedian Brent Pella expresses his frustration with Spirit Airlines in a video about his experience flying with Spirit Airlines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YvfYK0EEhK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -64,3 +66,5 @@ wordcountaddin:::text_stats()
 ^[[Link to USA today Article]https://traveltips.usatoday.com/busiest-travel-day-108182.html
 
 ^[[Link to Forbes Article]https://www.forbes.com/sites/laurabegleybloom/2018/03/06/ranked-the-best-and-worst-airlines-in-america/#1ff18bf7e953
+
+^^[[Link to Money Article]http://money.com/money/5455032/top-airlines-minimum-delays-holidays/
