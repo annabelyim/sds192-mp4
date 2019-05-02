@@ -19,8 +19,6 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 
 ```
 
-Christmas is arguably the most important holiday, families and friends get together to celebrate the holidays. It's the time people apperciated spending time at home with relatives and frinds which often involves traveling home. But flying home can create a lot of stress especially because of the weather and possible delays. In fact, data shows that in 2015 chirstams eve was 6th day in december with the most delays with a total of 200 days of delays.(more comment about the data)
-
 Christmas is arguably the most important holiday, as family and friends get together to celebrate the holidays. It's the time people appreciate spending time at home with relatives and friends which often involves traveling home. USA today listed the Christmas season as one of the busiest travel days. But flying home can create a lot of stress especially because of the weather and possible delays. 
 
 Problem statement: For this assignment, we are trying to figure out which airline carriers have the least amount of delays during Christmas Eve using the airline's database. 
