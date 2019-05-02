@@ -63,8 +63,8 @@ wordcountaddin:::text_stats()
 
 ###References:
 
-^[[Link to USA today Article]https://traveltips.usatoday.com/busiest-travel-day-108182.html
+[Link to USA today Article]https://traveltips.usatoday.com/busiest-travel-day-108182.html
 
-^[[Link to Forbes Article]https://www.forbes.com/sites/laurabegleybloom/2018/03/06/ranked-the-best-and-worst-airlines-in-america/#1ff18bf7e953
+[Link to Forbes Article]https://www.forbes.com/sites/laurabegleybloom/2018/03/06/ranked-the-best-and-worst-airlines-in-america/#1ff18bf7e953
 
-^^[[Link to Money Article]http://money.com/money/5455032/top-airlines-minimum-delays-holidays/
+[Link to Money Article]http://money.com/money/5455032/top-airlines-minimum-delays-holidays/
