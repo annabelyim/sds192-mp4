@@ -6,7 +6,7 @@ output:
   html_document:
     code_folding: hide
 ---
-## I Just Want to Be Home, but of Course, My Flight Is Delayed
+## I Just Want to Be Home, but of Course, My Flight Is Delayed!
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(RMySQL)
